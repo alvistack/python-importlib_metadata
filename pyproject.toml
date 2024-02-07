@@ -1,9 +1,10 @@
 [build-system]
-requires = ["setuptools>=61.2", "setuptools_scm[toml]>=3.4.1"]
+requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "importlib_metadata"
+version = "8.0.0"
 authors = [
 	{ name = "Jason R. Coombs", email = "jaraco@jaraco.com" },
 ]
@@ -21,7 +22,6 @@ dependencies = [
 	"zipp>=0.5",
 	'typing-extensions>=3.6.4; python_version < "3.8"',
 ]
-dynamic = ["version"]
 
 [project.urls]
 Source = "https://github.com/python/importlib_metadata"
@@ -58,5 +58,3 @@ doc = [
 	# local
 ]
 perf = ["ipython"]
-
-[tool.setuptools_scm]
