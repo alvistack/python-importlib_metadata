@@ -1,0 +1,5 @@
+python-importlib-metadata (100:7.1.0-1) UNRELEASED; urgency=medium
+
+  * https://github.com/python/importlib_metadata/releases/tag/v7.1.0
+
+ -- Wong Hoi Sing Edison <hswong3i@pantarei-design.com>  Thu, 21 Mar 2024 08:42:15 +0800
