@@ -1,3 +1,13 @@
+v8.7.1
+======
+
+Bugfixes
+--------
+
+- Fixed errors in FastPath under fork-multiprocessing. (#520)
+- Removed cruft from Python 3.8. (#524)
+
+
 v8.7.0
 ======
 
