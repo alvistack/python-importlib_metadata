@@ -1,0 +1,4 @@
+python-importlib-metadata source: file-without-copyright-information
+python-importlib-metadata source: no-debian-changes
+python-importlib-metadata source: source-contains-prebuilt-windows-binary
+python-importlib-metadata source: source-package-encodes-python-version

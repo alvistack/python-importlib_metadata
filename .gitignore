@@ -11,3 +11,5 @@ artifacts
 .doctrees
 dist
 pip-wheel-metadata
+
+.pybuild/
