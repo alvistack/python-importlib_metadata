@@ -711,7 +711,7 @@ class Distribution(metaclass=abc.ABCMeta):
 
         def quoted_marker(section):
             section = section or ''
-            extra, sep, markers = section.partition(':')
+            extra, _sep, markers = section.partition(':')
             if extra and markers:
                 markers = f'({markers})'
             conditions = list(filter(None, [markers, make_condition(extra)]))
@@ -1071,7 +1071,7 @@ class PathDistribution(Distribution):
         filename, ext = os.path.splitext(stem)
         if ext not in ('.dist-info', '.egg-info'):
             return
-        name, sep, rest = filename.partition('-')
+        name, _sep, _rest = filename.partition('-')
         return name
 
 
