@@ -5,6 +5,24 @@ import warnings
 
 from test.support import warnings_helper as orig
 
+if sys.version_info >= (3, 15):
+    from builtins import frozendict
+else:
+
+    def frozendict(*args, **kwargs) -> types.MappingProxyType:
+        """
+        Approximate frozendict, added to builtins in Python 3.15.
+
+        A mapping proxy is read-only, so as long as the mapping it wraps
+        has no other referents, it's effectively immutable.
+
+        >>> frozendict(a=1)['a']
+        1
+        >>> frozendict({'a': 1}) == {'a': 1}
+        True
+        """
+        return types.MappingProxyType(dict(*args, **kwargs))
+
 
 @contextlib.contextmanager
 def ignore_warnings(*, category, message=''):

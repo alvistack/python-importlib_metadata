@@ -22,6 +22,7 @@ from importlib_metadata import (
 
 from . import fixtures
 from ._path import Symlink
+from .compat.py314 import frozendict
 
 
 class BasicTests(fixtures.DistInfoPkg, unittest.TestCase):
@@ -134,7 +135,7 @@ class NameNormalizationTests(fixtures.OnSysPath, fixtures.SiteDir, unittest.Test
 
 class InvalidMetadataTests(fixtures.OnSysPath, fixtures.SiteDir, unittest.TestCase):
     @staticmethod
-    def make_pkg(name, files=dict(METADATA="VERSION: 1.0")):  # noqa: B006
+    def make_pkg(name, files=frozendict(METADATA="VERSION: 1.0")):
         """
         Create metadata for a dist-info package with name and files.
         """
