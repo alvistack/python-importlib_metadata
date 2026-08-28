@@ -1,3 +1,12 @@
+v9.0.1
+======
+
+Bugfixes
+--------
+
+- Marked the ``other`` parameter of ``SimplePath.joinpath`` and ``SimplePath.__truediv__`` positional-only, so ``pathlib.Path`` satisfies the protocol under type checkers that compare parameter names. (#542)
+
+
 v9.0.0
 ======
 
