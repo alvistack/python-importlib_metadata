@@ -259,9 +259,8 @@ class DirectoryTest(fixtures.OnSysPath, fixtures.SiteDir, unittest.TestCase):
     def test_egg(self):
         egg = self.site_dir.joinpath('foo-3.6.egg')
         egg.mkdir()
-        with self.add_sys_path(egg):
-            with self.assertRaises(PackageNotFoundError):
-                version('foo')
+        with self.add_sys_path(egg), self.assertRaises(PackageNotFoundError):
+            version('foo')
 
 
 class MissingSysPath(fixtures.OnSysPath, unittest.TestCase):

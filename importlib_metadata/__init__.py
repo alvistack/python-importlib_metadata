@@ -44,10 +44,10 @@ from .compat import py311
 __all__ = [
     'Distribution',
     'DistributionFinder',
+    'MetadataNotFound',
     'PackageMetadata',
     'PackageNotFoundError',
     'PackagePath',
-    'MetadataNotFound',
     'SimplePath',
     'distribution',
     'distributions',
