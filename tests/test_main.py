@@ -134,7 +134,7 @@ class NameNormalizationTests(fixtures.OnSysPath, fixtures.SiteDir, unittest.Test
 
 class InvalidMetadataTests(fixtures.OnSysPath, fixtures.SiteDir, unittest.TestCase):
     @staticmethod
-    def make_pkg(name, files=dict(METADATA="VERSION: 1.0")):
+    def make_pkg(name, files=dict(METADATA="VERSION: 1.0")):  # noqa: B006
         """
         Create metadata for a dist-info package with name and files.
         """
