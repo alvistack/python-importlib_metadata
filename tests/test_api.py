@@ -54,9 +54,8 @@ class APITests(
     def test_prefix_not_matched(self):
         prefixes = 'p', 'pkg', 'pkg.'
         for prefix in prefixes:
-            with self.subTest(prefix):
-                with self.assertRaises(PackageNotFoundError):
-                    distribution(prefix)
+            with self.subTest(prefix), self.assertRaises(PackageNotFoundError):
+                distribution(prefix)
 
     def test_for_top_level(self):
         tests = [

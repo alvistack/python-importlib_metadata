@@ -58,7 +58,7 @@ class BasicTests(fixtures.DistInfoPkg, unittest.TestCase):
         dict(name=''),
     )
     def test_invalid_inputs_to_from_name(self, name):
-        with self.assertRaises(Exception):
+        with self.assertRaises(ValueError):
             Distribution.from_name(name)
 
 
@@ -165,7 +165,7 @@ class InvalidMetadataTests(fixtures.OnSysPath, fixtures.SiteDir, unittest.TestCa
         """
         fixtures.build_files(self.make_pkg('foo-4.3', files={}), self.site_dir)
         with self.assertRaises(MetadataNotFound):
-            Distribution.from_name('foo').metadata
+            _ = Distribution.from_name('foo').metadata
         with self.assertRaises(MetadataNotFound):
             metadata('foo')
 
